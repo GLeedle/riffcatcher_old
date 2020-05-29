@@ -9,7 +9,7 @@ session_start();
     require "inc/register.inc.php";
     ?>
     <div class="container-fluid bg-dark w-50 mt-5 mb-5 text-center rounded shadow">
-        <div class="reg-wrapper bg-secondary mx-auto w-50 p-2">
+        <div class="reg-wrapper bg-dark mx-auto w-50 p-2 border-left border-right">
             <div class="registration-form  mt-3">
                 <p><a href="login.php">Login</a> or register to proceed.</P>
                 <p>Please choose a username and fill out the information below to register.</p>
