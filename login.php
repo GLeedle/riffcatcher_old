@@ -1,7 +1,8 @@
 <?php
+$pageTitle = 'Login for Riff Catcher';
 session_start();
 require 'inc/login.inc.php';
-require_once 'layout/header.php'
+require_once 'layout/header.php';
 ?>
 
 <body>    
@@ -23,7 +24,5 @@ require_once 'layout/header.php'
             </form>
         </div>
     </div>
-    <?php include_once 'layout/footer.php' ?>
-    
-   
+    <?php include_once 'layout/footer.php'; ?>
 </body>

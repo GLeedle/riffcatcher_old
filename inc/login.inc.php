@@ -1,7 +1,7 @@
 <?php
 // login.php
 // session_destroy();
-$pageTitle = 'Login';
+
 
 require_once 'sql/db_connect.inc.php';
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         header('location: index.php');
     } else {
-        echo '<p class="text-center bg-danger p-2">There is no user by that username, please try again or <a href="register.php">Register</p>';
+        echo '<p class="text-center bg-danger p-2 m-0">Incorrect username and or password, please try again or click here to <a href="register.php">Register</p>';
     }
     
 }

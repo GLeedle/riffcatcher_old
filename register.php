@@ -1,4 +1,5 @@
 <?php
+$pageTitle = "Register for Riff Catcher";
 require_once 'layout/header.php';
 session_start();
 ?>
@@ -7,7 +8,7 @@ session_start();
     <?php include "layout/navbar.php";
     require "inc/register.inc.php";
     ?>
-    <div class="container-fluid bg-info w-50 mt-5 mb-5 text-center rounded shadow">
+    <div class="container-fluid bg-dark w-50 mt-5 mb-5 text-center rounded shadow">
         <div class="reg-wrapper bg-secondary mx-auto w-50 p-2">
             <div class="registration-form  mt-3">
                 <p><a href="login.php">Login</a> or register to proceed.</P>
@@ -35,7 +36,7 @@ session_start();
                 <label for="password">Password</label>
                 <input class="form-control" type="password" id="password" name="password" placeholder="Password">
                 <div id="errorPassword"></div>
-                <br>                
+                <br>
                 <label for="address">Address</label>
                 <input class="form-control" type="text" id="address" name="address" placeholder="Address">
                 <div id="erroraddress"></div>
@@ -61,7 +62,6 @@ session_start();
             <p class="registration-form">Already a member? <a href="login.php">Login here</a></p>
         </div>
     </div>
-    <script src="js/form.js"></script>
     <?php include 'layout/footer.php'; ?>
-
+    <script src="js/form.js"></script>
 </body>

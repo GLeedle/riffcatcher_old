@@ -1,7 +1,7 @@
-<nav class="nav shadow bg-light">
+<nav class="nav shadow bg-dark">
   <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link active" href="#">Riff Catcher</a>
+      <a class="nav-link active" href="index.php">Riff Catcher</a>
     </li>
     <li class="nav-item">
       <a class="nav-link mt-3" href="#">#</a>
