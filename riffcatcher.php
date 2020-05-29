@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Riff Catcher</title>
-</head>
+<?php 
+session_start();
+require_once "layout/header.php";
+?>
+
 <body>
-<H1>Welcome to the Riff Catcher</H1>
+    <?php include "layout/navbar.php";
+    var_dump($_SESSION);
+    ?>
+    <div class="container-fluid text-center mt-5 mb-5">
+<H1>Riff Catcher</H1>
+<h2><?php echo $_SESSION['firstname'] . " " . $_SESSION["lastname"]; ?></h2>
 
 
-
-
+</div>
+<?php include "layout/footer.php"; ?>
 <!-- jQuery -->
 <script src="js/jquery-3.3.1.min.js"></script>
 <!-- Bootstrap JavaScript -->

@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = hash('sha512', $db->real_escape_string($_POST['password']));
 
     $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
-    echo $sql;
 
 
     $result = $db->query($sql);
@@ -20,13 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['loggedin'] = 1;
         $_SESSION['email'] = $row['email'];
         $_SESSION['username'] = $row['username'];
-        $_SESSION['first_name'] = $row['first_name'];  
+        $_SESSION['firstname'] = $row['firstname'];  
+        $_SESSION['lastname'] = $row['lastname'];  
 
         print_r($row);
 
         header('location: index.php');
     } else {
-        echo '<p>Please try again or go away</p>';
+        echo '<p class="text-center bg-danger p-2">There is no user by that username, please try again or <a href="register.php">Register</p>';
     }
     
 }
