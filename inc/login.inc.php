@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         print_r($row);
 
-        header('location: index.php');
+        header('location: riffcatcher.php');
     } else {
         echo '<p class="text-center bg-danger p-2 m-0">Incorrect username and or password, please try again or click here to <a href="register.php">Register</p>';
     }
