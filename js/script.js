@@ -1,30 +1,30 @@
 // is the user logged in or not?
-fetch('inc/loggedin.inc.php')
-    .then(res => res.json())
-    .then(function (res) {
-        if (res.status == 'yes') {
-            const login = document.querySelector('#login')
-            login.style.display = 'none'
-            const logout = document.querySelector('#logout')
-            logout.style.display = 'inline-block'
+// fetch('inc/loggedin.inc.php')
+//     .then(res => res.json())
+//     .then(function (res) {
+//         if (res.status == 'yes') {
+//             const login = document.querySelector('#login')
+//             login.style.display = 'none'
+//             const logout = document.querySelector('#logout')
+//             logout.style.display = 'inline-block'
 
-            logout.addEventListener('click', function (e) {
-                e.preventDefault()
-                fetch('inc/loggedin.inc.php')
-                    .then(res => res.json())
-                    .then(function (res) {
-                        if (res.status == 'success') {
-                            window.location.href = 'login.php'
-                        }
-                    })
-            })
-        } else {
-            const login = document.querySelector('#login')
-            login.style.display = 'inline-block'
-            const logout = document.querySelector('#logout')
-            logout.style.display = 'none'
-        }
-    })
+//             logout.addEventListener('click', function (e) {
+//                 e.preventDefault()
+//                 fetch('inc/loggedin.inc.php')
+//                     .then(res => res.json())
+//                     .then(function (res) {
+//                         if (res.status == 'success') {
+//                             window.location.href = 'login.php'
+//                         }
+//                     })
+//             })
+//         } else {
+//             const login = document.querySelector('#login')
+//             login.style.display = 'inline-block'
+//             const logout = document.querySelector('#logout')
+//             logout.style.display = 'none'
+//         }
+//     })
 
 
 

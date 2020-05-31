@@ -7,3 +7,19 @@ body {
     background-color: #00253a;
     color: #ffffff;
 }
+
+[data-field] {
+    display: none;
+}
+
+.error {
+    display: inline;
+    font-style: italic;
+    color: red;
+    font-size: .8rem;
+    margin-top: 2px;
+}
+
+span {
+    display: inline;
+}

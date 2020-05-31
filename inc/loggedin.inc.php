@@ -5,10 +5,10 @@ if (!$_SESSION['username']) {
     header('location: riffcatcher.php');
 }
 
-if (isset($_SESSION['firstname'])) {
-    echo json_encode(["status" => 'yes']);
-} else {
-    echo json_encode(["status" => 'no']);
-}
+// if (isset($_SESSION['firstname'])) {
+//     echo json_encode(["status" => 'yes']);
+// } else {
+//     echo json_encode(["status" => 'no']);
+// }
 
 
