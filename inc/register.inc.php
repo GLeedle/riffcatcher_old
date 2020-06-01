@@ -19,13 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // insert into the riffcatcher database these columns using the new variables set above
     $sql = "INSERT INTO user (username,firstname,lastname,email,password,address,city,state,zip,phone) 
-                    VALUES('$username','$firstname','$lastname','$email','$password','$address','$city','$state','$zip','$phone')";
+            VALUES('$username','$firstname','$lastname','$email','$password','$address','$city','$state','$zip','$phone')";
 
 
     // echo $sql;
     $result = $db->query($sql);
 
-
+    // Create user directories to be used for the site
     if (!is_dir('usr/' . $username)) {
         mkdir('usr/' . $username);
         mkdir('usr/' . $username . '/upload');
@@ -43,5 +43,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<div class=\"login btn btn-primary mx-auto\"><a href="login.php" title="Login Page">Login</a></div>';
         header('Location:login.php');
     }
-
 }

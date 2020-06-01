@@ -1,8 +1,9 @@
 <?php
 session_start();
-$pageTitle = "Riff Catcher | Welcome " .  ucwords($_SESSION['username']);
+$pageTitle = "Welcome! " .  ucwords($_SESSION['username'] . "'s Riff Catcher Home");
 require_once "layout/header.php";
-require "inc/uploads.inc.php";
+require_once "functions/upload.files.php";
+require_once "functions/display.files.php";
 
 // var_dump($_SESSION)
 ?>
@@ -10,9 +11,10 @@ require "inc/uploads.inc.php";
 <body>
     <?php include "layout/navbar.php";
     ?>
-    <div class="container-fluid text-center mt-5 mb-5">
+    <div class="container-fluid mt-5 mb-5">
         <H1>Riff Catcher</H1>
-        <h2><?php echo $_SESSION['firstname'] . " " . $_SESSION["lastname"]; ?></h2>
+        <h2><?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?></h2>
+        <br><br>
         <?php if (!empty($message)) {
             echo "<p>{$message}</p>";
         } ?>
@@ -22,6 +24,9 @@ require "inc/uploads.inc.php";
             <!-- <input type="file" name="file_upload2"><br><br> -->
             <input type="submit" name="submit" value="Upload">
         </form>
+        <br><br>
+
+        <div><?php display_files() ?> </div>
 
     </div> <?php include "layout/footer.php"; ?>
     <!-- jQuery -->
