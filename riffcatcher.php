@@ -26,7 +26,7 @@ require_once "functions/display.files.php";
         </form>
         <br><br>
 
-        <div><?php display_files() ?> </div>
+        <div><?php display_uploaded_files() ?> </div>
 
     </div> <?php include "layout/footer.php"; ?>
     <!-- jQuery -->

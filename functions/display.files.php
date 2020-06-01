@@ -20,16 +20,18 @@ if (isset($_GET['file'])) {
     }
 }
 
-function display_files()
+function display_uploaded_files()
 {
+    echo "<div><h1>Uploaded Files</h1></div>";
     $dir = 'usr/' . $_SESSION['username'] . '/upload'; //$_SESSION['folder']    
     if (is_dir($dir)) { 
         if ($dir_handle = opendir($dir)) {
             while ($filename = readdir($dir_handle)) {
-                if (!is_dir($filename) && $filename != '.DS_Store') {
+                if (!is_dir($filename) && $filename != '.DS_Store') {                   
                     echo "<div><a href=\"usr/" . $_SESSION['username'] . "/upload/$filename\"><a href=\"usr/" . $_SESSION['username'] . "/upload/$filename\">$filename</a>";
+                    echo "<br><audio controls><source src=\"usr/" . $_SESSION['username'] . "/upload/$filename\"></audio>";
                     $filename = rawurlencode($filename); 
-                    echo "<a href=\"functions/display.files.php?file=$filename\"><br><div class=\"btn btn-outline-danger w-10\">Delete</div></a></div>";
+                    echo "<a href=\"functions/display.files.php?file=$filename\"><div class=\"btn btn-outline-danger w-10 mb-5 ml-3\">Delete</div></a></div><br><br>";
                 }
             } // end while
             // close the directory now that we are done with it
