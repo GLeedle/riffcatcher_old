@@ -29,7 +29,7 @@ function display_uploaded_files()
             while ($filename = readdir($dir_handle)) {
                 if (!is_dir($filename) && $filename != '.DS_Store') {                   
                     echo "<div><a href=\"usr/" . $_SESSION['username'] . "/upload/$filename\"><a href=\"usr/" . $_SESSION['username'] . "/upload/$filename\">$filename</a>";
-                    echo "<br><audio controls><source src=\"usr/" . $_SESSION['username'] . "/upload/$filename\"></audio>";
+                    echo "<br><audio controls><source src=\"usr/" . $_SESSION['username'] . "/upload/$filename\" type=\"audio/mpeg\"></audio>";
                     $filename = rawurlencode($filename); 
                     echo "<a href=\"functions/display.files.php?file=$filename\"><div class=\"btn btn-outline-danger w-10 mb-5 ml-3\">Delete</div></a></div><br><br>";
                 }
