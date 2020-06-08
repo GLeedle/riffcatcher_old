@@ -7,6 +7,7 @@ require_once "layout/header.php";
     <?php include "layout/navbar.php"; ?>
     <div class="container-fluid text-center p-5">
         <h1>Riff Catcher</h1>
+        <a href="riffcatcher.php">Go to my library</a>
 
     </div>
     <?php include_once "layout/footer.php" ?>

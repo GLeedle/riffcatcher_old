@@ -30,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mkdir('usr/' . $username);
         mkdir('usr/' . $username . '/upload');
         mkdir('usr/' . $username . '/deleted');
-        mkdir('usr/' . $username . '/recording');
         mkdir('usr/' . $username . '/img');
         header('Location:login.php');
     }

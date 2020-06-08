@@ -123,7 +123,20 @@ function createDownloadLink(blob) {
 	var link = document.createElement('a');
 
 	//name of .wav file to use during upload and download (without extendion)
-	var filename = new Date().toISOString();
+
+	// Setting the file name to the current date/time/seconds
+	var currentDate = "";
+	var d = new Date();
+	currentDate += d.getMonth() + "-";
+	currentDate += d.getDate() + "-";
+	currentDate += d.getFullYear() + "-";
+	currentDate += d.getHours() + "-";
+	currentDate += d.getMinutes() + "-";
+	currentDate += d.getSeconds() + "-";
+	currentDate += d.getMilliseconds();
+
+	filename = currentDate
+
 
 	//add controls to the <audio> element
 	au.controls = true;
@@ -132,7 +145,7 @@ function createDownloadLink(blob) {
 	//save to disk link
 	link.href = url;
 	link.download = filename + ".wav"; //download forces the browser to donwload the file using the  filename
-	link.innerHTML = "Save to disk";
+	link.innerHTML = "<button class=\"btn btn-outline-success p-1\">Save to disk</button>";
 
 	//add the new audio element to li
 	li.appendChild(au);
@@ -146,7 +159,7 @@ function createDownloadLink(blob) {
 	//upload link
 	var upload = document.createElement('a');
 	upload.href = "#";
-	upload.innerHTML = "Upload";
+	upload.innerHTML = "&nbsp;<button class=\"btn btn-outline-info p-1\">Upload</button>";
 	upload.addEventListener("click", function (event) {
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function (e) {
@@ -156,9 +169,9 @@ function createDownloadLink(blob) {
 		};
 		var fd = new FormData();
 		fd.append("audio_data", blob, filename);
-		xhr.open("POST", "functions/upload.audio.php", true);
+		xhr.open("POST", "inc/upload.recording.inc.php", true);
 		xhr.send(fd);
-		console.log(FormData)
+
 	})
 	li.appendChild(document.createTextNode(" "))//add a space in between
 	li.appendChild(upload)//add the upload link to li
