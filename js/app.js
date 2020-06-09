@@ -145,7 +145,7 @@ function createDownloadLink(blob) {
 	//save to disk link
 	link.href = url;
 	link.download = filename + ".wav"; //download forces the browser to donwload the file using the  filename
-	link.innerHTML = "<button class=\"btn btn-outline-success p-1\">Save to disk</button>";
+	link.innerHTML = "<div class=\"save-btn\">Save to disk</div>";
 
 	//add the new audio element to li
 	li.appendChild(au);
@@ -159,19 +159,19 @@ function createDownloadLink(blob) {
 	//upload link
 	var upload = document.createElement('a');
 	upload.href = "#";
-	upload.innerHTML = "&nbsp;<button class=\"btn btn-outline-info p-1\">Upload</button>";
+	upload.innerHTML = "<div class=\"upload-btn\">Upload</div>";
 	upload.addEventListener("click", function (event) {
-		var xhr = new XMLHttpRequest();
+		var xhr = new XMLHttpRequest();		
+		event.preventDefault();
 		xhr.onload = function (e) {
 			if (this.readyState === 4) {
-				console.log("Server returned: ", e.target.responseText);
+				console.log("Server returned: ", e.target.responseText);			
 			}
 		};
 		var fd = new FormData();
 		fd.append("audio_data", blob, filename);
 		xhr.open("POST", "inc/upload.recording.inc.php", true);
-		xhr.send(fd);
-
+		xhr.send(fd);				
 	})
 	li.appendChild(document.createTextNode(" "))//add a space in between
 	li.appendChild(upload)//add the upload link to li

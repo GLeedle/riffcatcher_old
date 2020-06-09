@@ -13,9 +13,8 @@ $upload_errors = array(
     UPLOAD_ERR_EXTENSION         => "File upload stopped by extension."
 );
 
-if ($_SERVER['REQUEST_METHOD'] == "POST"){
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     session_start();
-
     // what file do we need to move?
     $tmp_file = $_FILES['audio_data']['tmp_name'];
     // set target file name
@@ -44,12 +43,4 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     // executing the SQL insertion into the DB
     $result = $db->query($sql);
 
-    // Checking for any errors from the DB
-    if (!$result) {
-        echo "<div class=\"alert-danger p-2 mx-auto text-center\">There was a problem uploading your file and or a DB issue</div>";
-    } else {
-        echo "<div class=\"alert-success p-2 mx-auto text-center\">Upload successful</div>";
-    }
-    // Redirect is necessary to clear the insert variables
-    header('Location: riffcatcher.php');    
 }

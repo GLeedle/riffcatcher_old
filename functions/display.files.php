@@ -1,28 +1,27 @@
 <?php
 
-// $path = $_SERVER['DOCUMENT_ROOT'];
-// $path .= '/usr/' . $_SESSION['username'];
-
-// echo $path;
-
 if (isset($_GET['file'])) {
     session_start();
+    require_once __DIR__ . "/../sql/db_connect.inc.php";
     // copies files to a deleted directory
     copy('../usr/' . $_SESSION['username'] . '/upload' . '/' . $_GET['file'], '../usr/' . $_SESSION['username'] . '/deleted' . '/' . $_GET['file']);
 
 
     if (isset($_GET['file'])) {
+        $filename = '"' . $_GET['file'] . '"';
         if (unlink('../usr/' . $_SESSION['username'] . '/upload' . '/' . $_GET['file'])) {
+            $sql = "DELETE FROM riff WHERE riff_name = $filename;";
+            $db->query($sql);
             header('Location: ../riffcatcher.php');
         } else {
             echo '<p class="alert alert-danger text-center">Failed to delete file</p>';
         }
     }
+
+    
 }
 
-function display_uploaded_files()
-{
-   
+function display_uploaded_files(){
     $dir = 'usr/' . $_SESSION['username'] . '/upload'; //$_SESSION['folder']    
     if (is_dir($dir)) {
         if ($dir_handle = opendir($dir)) {
@@ -39,3 +38,7 @@ function display_uploaded_files()
         } // end if
     } //end second if   
 }
+
+
+
+

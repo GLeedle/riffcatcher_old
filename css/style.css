@@ -113,3 +113,31 @@ ul {
     border-radius: 0;
     margin-bottom: 0;
 }
+
+.save-btn {
+    border: 1px solid #17a2b8;
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+    color: #17a2b8;
+    border-radius: 5px;
+}
+
+.save-btn:hover {
+    background-color: #17a2b8;
+    color: #ffffff;
+}
+
+.upload-btn {
+    border: 1px solid #28A745;
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+    color: #28A745;
+    border-radius: 5px;
+}
+
+.upload-btn:hover {
+    background-color: #28A745;
+    color: #ffffff;
+}

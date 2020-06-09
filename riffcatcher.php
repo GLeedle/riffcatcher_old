@@ -49,7 +49,7 @@ require_once "functions/display.files.php";
                 </div>
             </form>
             <br><br><br>
-            <div class="jumbotron text-white text-center p-2 bg-info">
+            <div class="jumbotron text-black-50 text-center p-2">
                 <h1>Uploaded files for user <?php echo $_SESSION['username']; ?> </h1>
             </div>
             <div id="display-files"><?php display_uploaded_files() ?></div>
