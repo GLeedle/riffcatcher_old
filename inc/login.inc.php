@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['firstname'] = $row['firstname'];  
         $_SESSION['lastname'] = $row['lastname'];  
         $_SESSION['user_id'] = $row['user_id'];
+        $_SESSION['profile_image'] = $row['profile_image'];
 
         print_r($row);
         // Redirect to the users home page

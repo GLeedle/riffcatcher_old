@@ -35,7 +35,7 @@ $upload_errors = array(
 
 
         // setting the file name and location
-        $location =  $_SESSION['username'] . "/upload" . '/' . $target_file;
+        $location =  $_SESSION['username'] . "/upload\/"  . $target_file;
         // Inserting the file upload data to the DB
         $sql = "INSERT INTO riff (user_id,riff_name,riff_loc)
             VALUES($_SESSION[user_id],'$target_file','$location')";
