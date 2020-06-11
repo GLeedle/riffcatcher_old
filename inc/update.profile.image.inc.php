@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // set target file name
     // basename gets just the file name
     $target_file = basename($_FILES['file_upload']['name']);
-    $_SESSION['profile_image'] = $_FILES['file_upload']['name'];
+    // $_SESSION['profile_image'] = $_FILES['file_upload']['name'];
 
     // set upload folder name
     $upload_dir = "usr/" . $_SESSION['username'] . "/img";
@@ -32,8 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             WHERE user_id = $user_id";
 
     $db->query($sql);
-    unlink('usr/' . $_SESSION['profile_image']);
-    $_SESSION['profile_image'] = $_SESSION['username'] . "/img" . "/" . $target_file;
 
+    // echo var_dump($_SESSION);
+    unlink('usr/' . $_SESSION['profile_image']);
+    
+    $_SESSION['profile_image'] = $_SESSION['username'] . "/img" . "/" . $target_file;
+    header('Location: user-profile.php');
+    
 }
 

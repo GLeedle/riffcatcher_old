@@ -4,11 +4,17 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #363636;
+    color: #ffffff;
 }
 
-a:link {
+a:link, a:visited {
     text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover, a:focus {
+    color: #17a2b8;
 }
 
 [data-field] {
@@ -156,4 +162,18 @@ ul {
     left: 94%;
     font-size: .75rem;
     color: #ffffff;
+}
+
+.image-description {
+    font-size: .75rem;
+    text-align: center;
+}
+
+.update-form {
+    margin: auto;
+    width: 330px;
+}
+
+.profile-page-wrapper {
+    min-width: 670px;
 }

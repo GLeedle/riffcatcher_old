@@ -43,10 +43,10 @@ session_start();
                 <input class="form-control" type="text" id="state" name="state" placeholder="State" value="<?php echo (isset($state) ? $state : ""); ?>">
                 <br>
                 <label for="zip">Zip Code</label><span data-field data-zip> &nbsp;&nbsp;( Please enter your zip code )</span>
-                <input class="form-control" type="number" id="zip" name="zip" placeholder="zip Code" value="<?php echo (isset($zip) ? $zip : ""); ?>">
+                <input class="form-control" type="text" id="zip" name="zip" placeholder="zip Code" value="<?php echo (isset($zip) ? $zip : ""); ?>">
                 <br>
                 <label for="phone">Phone Number</label><span data-field data-phone> &nbsp;&nbsp;( Please enter your phone number )</span>
-                <input class="form-control" type="number" id="phone" name="phone" placeholder="Phone Number" value="<?php echo (isset($phone) ? $phone : ""); ?>">
+                <input class="form-control" type="text" id="phone" name="phone" placeholder="Phone Number" value="<?php echo (isset($phone) ? $phone : ""); ?>">
                 <br>
                 <input class="btn btn-primary" type="submit" value="Register" id="submit">
             </form>

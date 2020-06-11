@@ -2,72 +2,66 @@
 session_start();
 $pageTitle = "User information for " . ucwords($_SESSION['username']);
 include_once "layout/header.php";
-require_once "inc/update-profile-image.inc.php";
+require_once "inc/update.records.inc.php";
 ?>
 
 <body>
     <?php
     include_once "layout/navbar.php";
-    var_dump($_SESSION)
+    // var_dump($_SESSION)
     ?>
     <div class="container-fluid">
 
-        <div class="container-fluid m-0 mt-5 bg-light text-white">
-            <div class="reg-wrapper bg-secondary mx-auto w-50 p-2 border-left border-right rounded">
-                <div class="registration-form  mt-3">
-
-
-                    <div class="profile-img mx-auto w-25">
+        <div class="container-fluid w-75 mt-5 bg-dark text-white shadow profile-page-wrapper">
+            <div class="reg-wrapper bg-dark mx-auto w-50 p-2 border-left border-right border-secondary">
+                <div class="update-form  mt-3">
+                    <div class="profile-img mx-auto w-50">
                         <img src="<?= "usr/" . $_SESSION['profile_image'] ?>" alt="Profile image" height="150" width="150">
-                        <br><br>
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="MAX_FILE_SIZE" value="100000000">
-                            <input type="file" name="file_upload">
-                            <input type="submit" name="submit" value="Upload">
-                        </form>
-
-
-
+                        <p class="image-description"><a href="update-profile-image.php">Change Profile Image</a></p>
+                        <p class="text-center"><?php echo $_SESSION['username']; ?>
+                            <br>
+                            <?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?>
+                            <br>
+                            <?php echo $_SESSION['email']; ?> </p>
                     </div>
-                    <p></p>
                 </div>
-                <hr>
+                <hr class="bg-secondary">
+                <form class="form-group text-left w-75 mx-auto" action="user-profile.php" method="POST">
 
-                <form class="form-group text-left w-50 mx-auto" action="register.php" method="POST">
-                    <label for="username">Change Username</label>
-                    <input class="form-control" type="text" id="username" name="username" placeholder="Username">
+                    <label for="firstname">Change First Name</label>
+                    <input class="form-control" type="text" id="firstname" name="firstname" value="<?php echo (isset($firstname_db) ? $firstname_db : ''); ?>">
+                    <br>
+                    <label for="lastname">Change Last Name</label>
+                    <input class="form-control" type="text" id="lastname" name="lastname" value="<?php echo (isset($lastname_db) ? $lastname_db : ''); ?>">
+                    <br>
+                    <label for="email">Change Email Address</label>
+                    <input class="form-control" type="text" id="email" name="email" value="<?php echo (isset($email_db) ? $email_db : ''); ?>">
+                    <br>
+                    <label for="password">Change Password</label>
+                    <input class="form-control" type="text" id="password" name="password">
+                    <br>
+                    <label for="address">Change Address</label>
+                    <input class="form-control" type="text" id="address" name="address" value="<?php echo (isset($address_db) ? $address_db : ''); ?>">
+                    <br>
+                    <label for="city">Change City</label>
+                    <input class="form-control" type="text" id="city" name="city" value="<?php echo (isset($city_db) ? $city_db : ''); ?>">
+                    <br>
+                    <label for="state">Change State</label>
+                    <input class="form-control" type="text" id="state" name="state" value="<?php echo (isset($state_db) ? $state_db : ''); ?>">
+                    <br>
+                    <label for="zip">Change Zip Code</label>
+                    <input class="form-control" type="text" id="zip" name="zip" value="<?php echo (isset($zip_db) ? $zip_db : ''); ?>">
+                    <br>
+                    <label for="phone">Change Phone Number</label>
+                    <input class="form-control" type="text" id="phone" name="phone" value="<?php echo (isset($phone_db) ? $phone_db : ''); ?>">
+                    <br>
 
-
-
-                    <!-- <br>
-                    <label for="firstname">First name</label>
-                    <p class="error">*</p><span data-field data-firstname> &nbsp;&nbsp;( Please enter your first name )</span>
-                    <input class="form-control" type="text" id="firstname" name="firstname" placeholder="First Name" value="<?php echo (isset($firstname) ? $firstname : ""); ?>">
-                    <br>
-                    <label for="lastname">Last name</label>
-                    <p class="error">*</p><span data-field data-lastname> &nbsp;&nbsp;( Please enter your last name )</span>
-                    <input class="form-control" type="text" id="lastname" name="lastname" placeholder="Last Name" value="<?php echo (isset($lastname) ? $lastname : ""); ?>">
-                    <br>
-                    <label for="email">Email</label>
-                    <p class="error">*</p><span data-field data-email> &nbsp;&nbsp;( Please enter your email address )</span>
-                    <input class="form-control" type="email" id="email" name="email" placeholder="email" value="<?php echo (isset($email) ? $email : ""); ?>">
-                    <br>
-                    <label for="password">Password</label>
-                    <p class="error">*</p><span data-field data-password> &nbsp;&nbsp;( Please enter a password )</span>
-                    <input class="form-control" type="password" id="password" name="password" placeholder="Password">
-                    <br>
-                    <label for="address">Address</label><span data-field data-address> &nbsp;&nbsp;( Please enter your address )</span>
-                    <input class="form-control" type="text" id="address" name="address" placeholder="Address" value="<?php echo (isset($address) ? $address : ""); ?>">
-                    <br>
-                    <label for="city">City</label><span data-field data-city> &nbsp;&nbsp;( Please enter your city )</span>
-                    <input class="form-control" type="text" id="city" name="city" placeholder="City" value="<?php echo (isset($city) ? $city : ""); ?>">
-                    <br>
-                    <label for="state">State</label><span data-field data-state> &nbsp;&nbsp;( Please enter your state )</span>
-                    <input class="form-control" type="text" id="state" name="state" placeholder="State" value="<?php echo (isset($state) ? $state : ""); ?>">
-                    <br>
-                    <label for="zip">Zip Code</label><span data-field data-zip> &nbsp;&nbsp;( Please enter your zip code )</span>
-                    <input class="form-control" type="number" id="zip" name="zip" placeholder="zip Code" value="<?php echo (isset($zip) ? $zip : ""); ?>">
-                    <br>
+                    <!-- 
+                 
+                    
+                    
+                    
+                    
                     <label for="phone">Phone Number</label><span data-field data-phone> &nbsp;&nbsp;( Please enter your phone number )</span>
                     <input class="form-control" type="number" id="phone" name="phone" placeholder="Phone Number" value="<?php echo (isset($phone) ? $phone : ""); ?>"> -->
                     <br>

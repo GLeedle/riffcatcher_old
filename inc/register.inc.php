@@ -16,10 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $state = $db->real_escape_string(ucwords(strtolower($_POST['state'])));
     $zip = $db->real_escape_string($_POST['zip']);
     $phone = $db->real_escape_string($_POST['phone']);
+    $profile_image = $username . '/img/missing-profile-photo.png';
 
     // insert into the riffcatcher database these columns using the new variables set above
-    $sql = "INSERT INTO user (username,firstname,lastname,email,password,address,city,state,zip,phone) 
-            VALUES('$username','$firstname','$lastname','$email','$password','$address','$city','$state','$zip','$phone')";
+    $sql = "INSERT INTO user (username,firstname,lastname,email,password,address,city,state,zip,phone,profile_image) 
+            VALUES('$username','$firstname','$lastname','$email','$password','$address','$city','$state','$zip','$phone','$profile_image')";
 
 
     // echo $sql;
@@ -31,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mkdir('usr/' . $username . '/upload');
         mkdir('usr/' . $username . '/deleted');
         mkdir('usr/' . $username . '/img');
+        copy('img/missing-profile-photo.png', 'usr/'. $username . '/img' . '/' . 'missing-profile-photo.png' );
         header('Location:login.php');
     }
 
