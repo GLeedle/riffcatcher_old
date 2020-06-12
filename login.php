@@ -5,7 +5,7 @@ require 'inc/login.inc.php';
 require_once 'layout/header.php';
 ?>
 <body>    
-    <?php require_once "layout/navbar.php";
+    <?php // require_once "layout/navbar.php";
     var_dump($_SESSION); ?>
     <div class="full-page">
         <div class="container-fluid bg-dark mt-5 p-5 text-center rounded shadow w-50">

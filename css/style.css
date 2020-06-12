@@ -154,12 +154,12 @@ ul {
 
 .nav-img {
     position: absolute;
-    left: 90%;
+    left: 80%;
 }
 
 .nav-profile {
     position: absolute;
-    left: 94%;
+    left: 84%;
     font-size: .75rem;
     color: #ffffff;
 }
@@ -177,3 +177,8 @@ ul {
 .profile-page-wrapper {
     min-width: 670px;
 }
+
+.not-logged-in {
+    font-size: .75rem;
+}
+

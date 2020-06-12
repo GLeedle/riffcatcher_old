@@ -171,7 +171,17 @@ function createDownloadLink(blob) {
 		var fd = new FormData();
 		fd.append("audio_data", blob, filename);
 		xhr.open("POST", "inc/upload.recording.inc.php", true);
-		xhr.send(fd);				
+		xhr.send(fd);	
+		
+		// This is where we call the API api/display.php
+		alert('Upload Successful!')
+		const display_files = document.querySelector('#display-files')
+		fetch('api/display.api.php')
+		.then(res => res.text())
+		.then(data=> {
+			display_files.innerHTML = data
+		})
+
 	})
 	li.appendChild(document.createTextNode(" "))//add a space in between
 	li.appendChild(upload)//add the upload link to li

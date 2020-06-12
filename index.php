@@ -1,4 +1,5 @@
 <?php
+session_start();
 $pageTitle = "Riff Catcher";
 require_once "layout/header.php";
 ?>

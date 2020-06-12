@@ -14,10 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // match username and password to user from the DB
     $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
-
+    // echo $sql;
     // execute query above
     $result = $db->query($sql);
 
+   
     // storing information from the DB inside the $_SESSION
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();

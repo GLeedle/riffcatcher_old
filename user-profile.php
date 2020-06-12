@@ -55,16 +55,6 @@ require_once "inc/update.records.inc.php";
                     <label for="phone">Change Phone Number</label>
                     <input class="form-control" type="text" id="phone" name="phone" value="<?php echo (isset($phone_db) ? $phone_db : ''); ?>">
                     <br>
-
-                    <!-- 
-                 
-                    
-                    
-                    
-                    
-                    <label for="phone">Phone Number</label><span data-field data-phone> &nbsp;&nbsp;( Please enter your phone number )</span>
-                    <input class="form-control" type="number" id="phone" name="phone" placeholder="Phone Number" value="<?php echo (isset($phone) ? $phone : ""); ?>"> -->
-                    <br>
                     <input class="btn btn-primary" type="submit" value="Save Changes" id="submit">
                 </form>
 

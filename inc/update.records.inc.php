@@ -13,11 +13,12 @@ while ($row = $result->fetch_assoc()) {
     $firstname_db = $row['firstname'];
     $lastname_db = $row['lastname'];
     $email_db = $row['email'];
-    $password = $row['password'];
+    $password_db = $row['password'];
     $address_db = $row['address'];
     $city_db = $row['city'];
     $state_db = $row['state'];
     $zip_db = $row['zip'];
+    $phone_db = $row['phone'];
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -43,8 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $email = $db->real_escape_string(strtolower($_POST['email']));
         $_SESSION['email'] = $_POST['email'];
     }
-
+    
+    if(empty($_POST['password'])) {
+        $password = $password_db;
+    } else {
     $password = hash("sha512", $db->real_escape_string($_POST["password"]));
+    }
 
     if (empty($_POST['address'])) {
         $address = $address_db;
@@ -74,6 +79,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $_SESSION['zip'] = $_POST['zip'];
     }
 
+    if (empty($_POST['phone'])) {
+        $phone = $phone_db;
+    } else {
+        $phone = $db->real_escape_string(ucwords(strtolower($_POST['phone'])));
+        $_SESSION['phone'] = $_POST['phone'];
+    }
+
 
 
 
@@ -86,7 +98,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     address = '$address',
     city = '$city',
     state = '$state',
-    zip = '$zip'
+    zip = '$zip',
+    phone = '$phone'
     WHERE user_id = $user_id";
 
     echo $sql;
