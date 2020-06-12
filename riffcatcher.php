@@ -4,8 +4,7 @@ $pageTitle = "Welcome! " .  ucwords($_SESSION['username'] . "'s Riff Catcher Hom
 require_once "layout/header.php";
 require_once "inc/upload.files.inc.php";
 require_once "functions/display.files.php";
-
-// var_dump($_SESSION)
+require_once "inc/loggedin.inc.php";
 ?>
 
 <body>

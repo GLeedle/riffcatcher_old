@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "inc/loggedin.inc.php";
 $pageTitle = "User information for " . ucwords($_SESSION['username']);
 include_once "layout/header.php";
 require_once "inc/update.records.inc.php";
