@@ -161,26 +161,43 @@ function createDownloadLink(blob) {
 	upload.href = "#";
 	upload.innerHTML = "<div class=\"upload-btn\">Upload</div>";
 	upload.addEventListener("click", function (event) {
-		var xhr = new XMLHttpRequest();		
+
 		event.preventDefault();
-		xhr.onload = function (e) {
-			if (this.readyState === 4) {
-				console.log("Server returned: ", e.target.responseText);			
-			}
-		};
 		var fd = new FormData();
 		fd.append("audio_data", blob, filename);
-		xhr.open("POST", "inc/upload.recording.inc.php", true);
-		xhr.send(fd);	
-		
+		fetch("inc/upload.recording.inc.php", {
+			method: "POST",
+			body: fd
+		}).then(res => res.json())
+			.then(data => {
+				const display_files = document.querySelector('#display-files')
+				fetch('api/display.api.php')
+					.then(res => res.text())
+					.then(data => {
+						display_files.innerHTML = data
+					})
+			})
+
+		// var xhr = new XMLHttpRequest();		
+		// event.preventDefault();
+		// xhr.onload = function (e) {
+		// 	if (this.readyState === 4) {
+		// 		console.log("Server returned: ", e.target.responseText);			
+		// 	}
+		// };
+		// var fd = new FormData();
+		// fd.append("audio_data", blob, filename);
+		// xhr.open("POST", "inc/upload.recording.inc.php", true);
+		// xhr.send(fd);	
+
 		// This is where we call the API api/display.php
-		alert('Upload Successful!')
-		const display_files = document.querySelector('#display-files')
-		fetch('api/display.api.php')
-		.then(res => res.text())
-		.then(data=> {
-			display_files.innerHTML = data
-		})
+		// alert('Upload Successful!')
+		// const display_files = document.querySelector('#display-files')
+		// fetch('api/display.api.php')
+		// .then(res => res.text())
+		// .then(data=> {
+		// 	display_files.innerHTML = data
+		// })
 
 	})
 	li.appendChild(document.createTextNode(" "))//add a space in between

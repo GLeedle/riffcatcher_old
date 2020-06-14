@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // set target file name
     // basename gets just the file name
     $target_file = basename($_FILES['audio_data']['name'] . ".wav");
-    var_dump($target_file);
+    
+    // var_dump($target_file);
     // require __DIR__ . "/../db/mysqli_connect.inc.php";
     // set upload folder name
 
@@ -42,5 +43,5 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // echo $sql;
     // executing the SQL insertion into the DB
     $result = $db->query($sql);
-
+    echo json_encode(["status" => "ok"]);
 }

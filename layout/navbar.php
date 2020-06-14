@@ -6,6 +6,9 @@
     <li class="nav-item">
       <a class="nav-link mt-3" href="riffcatcher.php">My Library of Riffs</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link mt-3" href="band.php">My Bands</a>
+    </li>
 
 
   </ul>
