@@ -147,7 +147,7 @@ ul {
     color: #ffffff;
 }
 
-.profile-img img{
+.profile-img img {
     border-radius: 50%;
     object-fit: cover;
 }
@@ -182,3 +182,12 @@ ul {
     font-size: .75rem;
 }
 
+th {
+    padding: 1rem 1rem 0 1rem;
+    color: aqua;
+}
+
+td {
+    padding: 1rem;
+    border: 1px solid #858585;
+}

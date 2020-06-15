@@ -9,7 +9,7 @@ require_once "layout/navbar.php";
 <body>
     <div class="container-fluid mt-5 mb-5 mx-auto shadow w-75 bg-dark rounded">
         <!-- create a band and add members -->
-        <a href="create-band.php">Create Band </a> <br><a href="update-band.php">Edit band and add members</a>
+        <a href="create-band.php">Create Band </a> <br>
 
         <!-- Gather the lists of bands you're part of -->
         <?php include "inc/band.inc.php"; ?>

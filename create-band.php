@@ -12,13 +12,9 @@ require_once "inc/create.band.inc.php";
 
         <form class="form-group text-left w-75 mx-auto" action="create-band.php" method="POST">
 
-            <label for="bandname">Create or change band Name</label>
+            <label for="bandname">Create Band Name</label>
             <input class="form-control" type="text" id="bandname" name="bandname" value="<?php echo (isset($bandname_db) ? $bandname_db : ''); ?>">
             <br>
-            <!-- <label for="bandmember">Add User to Band</label>
-            <br>
-            <select name="bandmember" id="bandmember">Band Member</select>
-            <option value=""></option> -->
             <label for="banddesc"></label>
             <textarea class="form-control" name="banddesc" id="banddesc"></textarea>
             <br>
@@ -33,6 +29,7 @@ require_once "inc/create.band.inc.php";
             </select>
             <br>
             <input type="submit" value="Save Band">
+            
 
             <?php include "layout/footer.php" ?>
 </body>
