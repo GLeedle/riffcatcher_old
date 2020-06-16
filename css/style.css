@@ -1,19 +1,22 @@
 /* style.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #363636;
-    color: #ffffff;
+    background-color: #ffffff;
+    margin-top: 90px;
 }
 
 a:link, a:visited {
     text-decoration: none;
-    color: #ffffff;
+    /* color: #17a2b8; */
+    color: #FA6B1B;
 }
 
 a:hover, a:focus {
+    /* color: #ffffff; */
     color: #17a2b8;
 }
 
@@ -36,6 +39,142 @@ ul {
     list-style-type: none;
 }
 
+.container-fluid {
+    margin-top: 200px;
+}
+
+
+.nav-wrapper {
+    /* box-shadow: 15px 15px 15px rgba(0, 0, 0, 0, .8); */
+    border-bottom: 1px solid #17a2b8;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 100px 1fr 1fr 100px 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: #292C35;
+    /* background-color: #ffffff; */
+    color: #ffffff;
+    z-index: 2;    
+}
+
+.nav-link-logo {
+    grid-column: 1/2;
+}
+
+.nav-link-library {
+    grid-column: 2/3;
+}
+
+.nav-img {
+    grid-column: 3/4;
+}
+
+.nav-profile {
+    grid-column: 4/5;
+    font-size: .75rem;
+    float: left;
+}
+
+.nav-link-bands {
+    grid-column: 5/6;
+}
+
+.login-btn {
+    grid-column: 6/7;
+}
+
+.logout-btn {
+    grid-column: 7/8;
+}
+
+.not-logged-in {
+    float: right;
+    font-size: .75rem;
+    padding-top: 20px;
+    padding-left: .5rem;
+}
+
+.login-page{
+    position: absolute;
+    top: -200px;
+    background-image: url(../img/blur-bg.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    margin-top: 200px;
+}
+
+.login-window {
+    background-color: #4d5263;
+    min-width: 400px;
+}
+
+.login-form {   
+    color: #ffffff;
+}
+
+.login-footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+
+.profile-img img {
+    border-radius: 50%;
+    object-fit: cover;
+    float: right;
+}
+
+.profile-img-large {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-profile ul {
+    margin: 0;
+    padding: .5rem;
+}
+
+
+.hero-img {
+    background-image: url(../img/hero-img-1920x268.png);
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.main-page-text {
+    /* background-color: #292C35;*/
+    background-color: #FDF1ED;
+    /* color: #ffffff;  */
+    padding: 2rem;
+    margin: 0 auto;
+    width: 60%;
+    border-radius: 5px;
+}
+
+.sign-up-text {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.riffcatcher-title-text {
+    text-align: center;
+    color: #17a2b8;  
+    border: 1px solid #17a2b8;
+    padding: 1rem;
+    width: 50%;
+    margin: 200px auto 0;
+    border-radius: 5px;
+    min-width: 400px;
+}
+
 #display-files {
     display: flex;
     flex-wrap: wrap;
@@ -51,14 +190,35 @@ ul {
     width: 500px;
 }
 
+
+.record-controls {
+    padding: 1rem;
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+    min-width: 400px;
+}
+
+#recordingsList {
+    text-align: center;
+    margin-bottom: 150px;
+}
+
 .dropzone-wrapper {
+    margin: 0 auto;
     border: 1px solid #17a2b8;
     color: #17a2b8;
     position: relative;
     height: 50px;
-    width: 450px;
+    width: 500px;
     border-radius: 5px;
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0, .8);
+}
+
+#formats {
+    color: #ffffff;
+    margin: auto;
+    width: 25%;
 }
 
 .dropzone-desc {
@@ -82,11 +242,16 @@ ul {
 }
 
 .dropzone-wrapper:hover, .dropzone-wrapper.dragover {
-    background: #363636;
-    border: solid 1px #17a2b8;
+    /* background: #363636; */
+    background-color: #17a2b8;
+    /* border: solid 1px #17a2b8; */
     color: #ffffff;
     transition: all .7s ease-out;
     cursor: pointer;
+}
+
+.upload-file-btn {
+    margin-left: 300px;
 }
 
 .box {
@@ -133,6 +298,8 @@ ul {
     color: #ffffff;
 }
 
+
+
 .upload-btn {
     border: 1px solid #28A745;
     width: 100px;
@@ -144,23 +311,6 @@ ul {
 
 .upload-btn:hover {
     background-color: #28A745;
-    color: #ffffff;
-}
-
-.profile-img img {
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.nav-img {
-    position: absolute;
-    left: 80%;
-}
-
-.nav-profile {
-    position: absolute;
-    left: 84%;
-    font-size: .75rem;
     color: #ffffff;
 }
 
@@ -178,10 +328,6 @@ ul {
     min-width: 670px;
 }
 
-.not-logged-in {
-    font-size: .75rem;
-}
-
 th {
     padding: 1rem 1rem 0 1rem;
     color: aqua;
@@ -190,4 +336,9 @@ th {
 td {
     padding: 1rem;
     border: 1px solid #858585;
+}
+
+footer {
+    background-color: #292C35;
+    color: #ffffff;
 }

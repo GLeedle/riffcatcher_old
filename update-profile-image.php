@@ -15,9 +15,9 @@ require_once "inc/update.profile.image.inc.php";
 
         <div class="container-fluid mx-auto mt-5 bg-dark text-white shadow">
             <div class="reg-wrapper bg-dark mx-auto  p-2 border-left border-right border-light text-center">
-                <div class="profile-img mx-auto ">
+                <div class="profile-img-large mx-auto ">
                     <p>Profile Image for <?php echo $_SESSION['username']; ?></p>
-                    <img src="<?= "usr/" . $_SESSION['profile_image'] ?>" alt="Profile image" height="300" width="300">
+                    <img class="profile-img-large" src="<?= "usr/" . $_SESSION['profile_image'] ?>" alt="Profile image" height="300" width="300">
                     <br><br>
                     File Name:
                     <br>
