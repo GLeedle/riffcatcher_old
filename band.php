@@ -7,13 +7,21 @@ require_once "inc/loggedin.inc.php";
 ?>
 
 <body>
-    <div class="container-fluid mt-5 mb-5 mx-auto shadow w-75 bg-dark rounded">
-        <!-- create a band and add members -->
-        <a href="create-band.php">Create Band </a> <br>
+    <div class="band-img-bg"></div>
+    <div class="container-fluid">
+    <div class="riffcatcher-title-text">
+            <H1><?php echo strtoupper($_SESSION['username']) ?>'s Band Page</H1>
+            <!-- create a band and add members -->
+            <hr>
+            <a href="create-band.php">Create Band </a> <br>
+        </div>
 
-        <!-- Gather the lists of bands you're part of -->
-        <?php include "inc/band.inc.php"; ?>
-        <!-- display all of the files from the various members of the band -->
+
+        <div class="band-list">
+            <!-- Gather the lists of bands you're part of -->
+            <?php include "inc/band.inc.php"; ?>
+
+        </div>
     </div>
 
     <?php include "layout/footer.php" ?>

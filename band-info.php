@@ -8,10 +8,16 @@ require_once "inc/loggedin.inc.php";
 
 
 <body>
-    <div class="container-fluid mt-5 mb-5 mx-auto shadow w-75 bg-dark rounded">
-        <a href="update-band.php">Edit band and add members</a>
-        <?php require_once "inc/band.info.inc.php";
-        ?>
+    <div class="container-fluid">
+        <div class="riffcatcher-title-text"> 
+            <h1>Band Members for <?php echo ucwords($_GET['bandname']) ?></h1>
+            <hr>
+            <a href="update-band.php">Edit band and add members</a>
+        </div>
+        <div class="display-band-files">
+            <?php require_once "inc/band.info.inc.php";
+            ?>
+        </div>
     </div>
     <?php include "layout/footer.php" ?>
 </body>

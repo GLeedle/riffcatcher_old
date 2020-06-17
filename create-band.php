@@ -8,30 +8,39 @@ require_once "inc/create.band.inc.php";
 ?>
 
 <body>
-    <div class="container-fluid mt-5 mb-5 mx-auto shadow w-75 bg-dark rounded">
-
-        <form class="form-group text-left w-75 mx-auto" action="create-band.php" method="POST">
-
-            <label for="bandname">Create Band Name</label>
-            <input class="form-control" type="text" id="bandname" name="bandname" value="<?php echo (isset($bandname_db) ? $bandname_db : ''); ?>">
-            <br>
-            <label for="banddesc"></label>
-            <textarea class="form-control" name="banddesc" id="banddesc"></textarea>
-            <br>
-            <label for="genre">Choose Genre</label>
-            <select name="genre" id="genre">
-                <option value="">-- Select Genre --</option>
-                <option value="2">Rock</option>
-                <option value="3">Pop</option>
-                <option value="5">Rap</option>
-                <option value="6">Heavy Metal</option>
-                <option value="7">R&B/Hip-Hop</option>
-            </select>
-            <br>
-            <input type="submit" value="Save Band">
-            
-
-            <?php include "layout/footer.php" ?>
+    <div class="container-fluid m-0 p-0">
+            <div class="band-creator-form">
+                <div class="riffcatcher-title-text">
+                    <h1>Welcome to the Band creator</h1>
+                    <form class="form-group text-left w-75 mx-auto" action="create-band.php" method="POST">
+                        <label for="bandname">Create Band Name</label>
+                        <input class="form-control" type="text" id="bandname" name="bandname" value="<?php echo (isset($bandname_db) ? $bandname_db : ''); ?>">
+                        <br>
+                        <label for="banddesc">Band Description</label>
+                        <textarea class="form-control" name="banddesc" id="banddesc"></textarea>
+                        <br>
+                        <label for="genre">Choose Genre</label>
+                        <select class="form-control" name="genre" id="genre">
+                            <option value="">-- Select Genre --</option>
+                            <option value="2">Rock</option>
+                            <option value="3">Pop</option>
+                            <option value="5">Rap</option>
+                            <option value="6">Heavy Metal</option>
+                            <option value="7">R&B/Hip-Hop</option>
+                            <option value="8">Punk</option>
+                            <option value="9">Electronic</option>
+                            <option value="10">Jazz</option>
+                            <option value="11">Country</option>
+                            <option value="12">Reggae</option>
+                            <option value="13">Alternative</option>
+                            <option value="14">Dub-Step</option>
+                        </select>
+                        <br>
+                        <input class="btn submit-secondaryclr-btn btn-outline-primary" type="submit" value="Save Band">
+                </div>
+            </div>
+        </div>
+    <?php include "layout/footer.php" ?>
 </body>
 
 </html>

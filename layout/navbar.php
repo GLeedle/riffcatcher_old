@@ -1,7 +1,7 @@
 <nav class="nav-wrapper">
     <ul class="nav-menu pt-4">
         <li class="nav-item ">
-            <a class="nav-link-logo" href="index.php"><h1>Riff Catcher</h1></a>
+            <a class="nav-link-logo" href="index.php"><h1>RiffCatcher</h1><span class="nav-profile">Catching riffs, one dream at a time</span></a>
         </li>
     </ul>
     <ul class="nav-menu pt-4">
@@ -16,8 +16,8 @@
             echo '<a href="update-profile-image.php">';
             echo '<img src="usr/' . $_SESSION['profile_image'] . '" ' . 'height="50" width="50" alt="profile photo of ' . $_SESSION['username'] . '"></a>';
         } else {
-            echo '<a class="not-logged-in" href="login.php">Not Logged in</a>';
             echo "<a href=\"login.php\"><img src=\"img/missing-profile-photo.png\" height=\"50\" width=\"50\" alt=\"Missing profile Image\"></a>";
+            echo '<a class="not-logged-in" href="login.php">Not Logged in</a>';
         }
         ?>
     </div>

@@ -9,13 +9,14 @@ require_once "layout/header.php";
     <div class="hero-img">
         <!-- <img src="img/stage-bg.jpg" alt="On the Stage"> -->
     </div>
-    <div class="container-fluid mt-5 mb-5">
-        <div class="site-headline text-center">
+    <div class="container-fluid mb-5">
+        <!-- <div class="riffcatcher-title-main">
             <h1>Riff Catcher</h1>
-        </div>
+            <h6>Catching riffs, one dream at a time</h6>
+        </div> -->
         <br><br>
         <div class="main-page-text">
-            <p>Welcome to your own library of riff ideas. </P>
+            <p>Welcome to &copy;Riffcatcher, your own library of riffs and ideas. </P>
             <p>Have you ever wanted one place to record and store musical riffs or ideas and share those ideas with friends around the world?</p>
             <p></p>
             <p>With Riff Catcher you can <a href="register.php">sign up</a> for a free account and begin recording ideas using the microphone on your PC.</p>

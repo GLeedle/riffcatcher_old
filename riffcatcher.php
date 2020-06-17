@@ -47,7 +47,7 @@ require_once "inc/loggedin.inc.php";
         </form>
         <br><br><br>
         <div class="riffcatcher-title-text">
-            <h1>Uploaded files for <?php echo strtoupper($_SESSION['username']); ?> </h1>
+            <h1><?php echo strtoupper($_SESSION['username']); ?>'s Riff Ideas </h1>
         </div>
         <div id="display-files"><?php display_uploaded_files() ?></div>
 

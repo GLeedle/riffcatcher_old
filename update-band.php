@@ -9,8 +9,10 @@ require_once "inc/update.band.inc.php";
 ?>
 
 <body>
-    <div class="container-fluid mt-5 mb-5 mx-auto shadow w-75 bg-dark rounded">
-
+    <div class="container-fluid">
+    <div class="riffcatcher-title-text"> 
+            <h1>Band Members for <?php echo ucwords($_SESSION['bandname']) ?></h1>
+            <hr>
         <form class="form-group text-left w-75 mx-auto" action="update-band.php" method="POST">
 
             <label for="bandname">Create or change band Name</label>
@@ -33,12 +35,13 @@ require_once "inc/update.band.inc.php";
                 <option value="6" <?php if ($genre_db == "6") echo ' selected="selected"'; ?>>Heavy Metal</option>
                 <option value="7" <?php if ($genre_db == "7") echo ' selected="selected"'; ?>>R&B/Hip-Hop</option>
             </select>
-            <br><br>
+        
             <!-- <input type="submit" value="Update Band"> -->
             <br><br>
             <label for="bandmember">Add Member to Band</label>
             <input class="form-control" type="text" id="bandmember" name="bandmember">
-            <input type="submit" value="Update Band">
+            <br>
+            <input class="btn btn-outline-primary submit-secondaryclr-btn" type="submit" value="Update Band">
 
             <?php include "layout/footer.php" ?>
 </body>

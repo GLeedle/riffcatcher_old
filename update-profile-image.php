@@ -13,10 +13,11 @@ require_once "inc/update.profile.image.inc.php";
     ?>
     <div class="container-fluid">
 
-        <div class="container-fluid mx-auto mt-5 bg-dark text-white shadow">
-            <div class="reg-wrapper bg-dark mx-auto  p-2 border-left border-right border-light text-center">
+        <div class="container-fluid">
+            <div class="reg-wrapper p-2 border-left border-right border-light text-center">
                 <div class="profile-img-large mx-auto ">
-                    <p>Profile Image for <?php echo $_SESSION['username']; ?></p>
+                <div class="riffcatcher-title-text">
+                    <h2>Profile Image for <?php echo strtoupper($_SESSION['username']); ?></h2>
                     <img class="profile-img-large" src="<?= "usr/" . $_SESSION['profile_image'] ?>" alt="Profile image" height="300" width="300">
                     <br><br>
                     File Name:

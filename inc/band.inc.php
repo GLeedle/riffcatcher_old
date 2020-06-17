@@ -16,7 +16,6 @@ $result = $db->query($sql);
 
 echo "<table>";
 echo "<th>Band Name</th>";
-echo "<th>Band Number</th>";
 echo "<th>Band Description</th>";
 echo "<th>Genre</th>";
 
@@ -24,7 +23,6 @@ while ($row = $result->fetch_assoc()) {
 
     echo "<tr>";
     echo "<td><a href='band-info.php?band_id={$row['band_id']}&bandname={$row['bandname']}'>{$row['bandname']}</a></td>";
-    echo "<td>{$row['band_id']}";
     echo "<td>{$row['banddesc']}</td>";
     echo "<td>{$row['genre']}</td>";
     echo "</tr>";
