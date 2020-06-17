@@ -2,7 +2,7 @@
 $pageTitle = "Register for Riff Catcher";
 require_once 'layout/header.php';
 session_start();
-include "layout/navbar.php";
+// include "layout/navbar.php";
 require "inc/register.inc.php";
 ?>
 
@@ -60,7 +60,7 @@ require "inc/register.inc.php";
                 </div>
             </div>
         </div>
+        <?php include 'layout/footer.php'; ?>
     </div>
-    <?php include 'layout/footer.php'; ?>
     <script src="js/errorHandle.js"></script>
 </body>
