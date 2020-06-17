@@ -1,5 +1,6 @@
 <?php 
 $_SESSION['band_id'] = $_GET['band_id'];
+$_SESSION['bandname'] = $_GET['bandname'];
 $_SESSION['band_url'] = "band-info.php?band_id=" . $_GET['band_id'] . "&bandname=" . rawurlencode($_GET['bandname']);
 require_once "sql/db_connect.inc.php";
 

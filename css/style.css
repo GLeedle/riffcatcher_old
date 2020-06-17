@@ -416,3 +416,8 @@ footer {
 .submit-secondaryclr-btn {
     color: var(--secondaryClr);
 }
+
+.delete-page {
+    margin-top: 200px;
+    margin-bottom: 420px;
+}

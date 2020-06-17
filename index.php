@@ -34,7 +34,7 @@ require_once "layout/header.php";
         </div>
     </div>
 
-    </div>
+
     <?php include_once "layout/footer.php" ?>
     <!-- jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>

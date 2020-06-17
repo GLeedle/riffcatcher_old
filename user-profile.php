@@ -57,17 +57,13 @@ require_once "inc/update.records.inc.php";
                         <label for="phone">Change Phone Number</label>
                         <input class="form-control" type="text" id="phone" name="phone" value="<?php echo (isset($phone_db) ? $phone_db : ''); ?>">
                         <br>
-                        <input class="btn btn-primary" type="submit" value="Save Changes" id="submit">
+                        <input class="btn btn-primary" type="submit" value="Save Changes" id="submit">&nbsp;&nbsp;<a href="delete-profile.php"><span class="error">Delete Profile</span></a>
                     </form>
-
                 </div>
             </div>
         </div>
-    </div>
-
-
-    </div>
     <?php include_once "layout/footer.php"; ?>
+    </div>
 </body>
 
 </html>

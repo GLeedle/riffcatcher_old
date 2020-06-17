@@ -31,7 +31,7 @@
             <li><?php echo (isset($_SESSION['username'])) ? "<span class=\"profile-header-text\">User: </span>" . strtoupper($_SESSION['username']) : ""; ?></li>
             <li><?php echo (isset($_SESSION['firstname'])) ? "<span class=\"profile-header-text\">Name: </span>" . $_SESSION['firstname'] . " " . $_SESSION['lastname'] :  ""; ?></li>
             <li><?php echo (isset($_SESSION['email'])) ? "<span class=\"profile-header-text\">Email: </span>" . $_SESSION['email'] : ""; ?></li>
-            <li><?php echo (isset($_SESSION['email'])) ? "<a href=\"user-profile.php\">Edit Profile</li></a>" : ""; ?>
+            <li><?php echo (isset($_SESSION['email'])) ? "<a href=\"user-profile.php\">Edit Profile</a></li>" : ""; ?>
         </ul>
     </div>
 
