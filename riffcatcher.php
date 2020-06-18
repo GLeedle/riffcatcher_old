@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pageTitle = "Welcome! " .  strtoupper($_SESSION['username'] . "'s Riff Catcher Home");
+$pageTitle = "Welcome! " .  strtoupper($_SESSION['username'] . "'s RiffCatcher Home");
 require_once "layout/header.php";
 require_once "inc/upload.files.inc.php";
 require_once "functions/display.files.php";
@@ -11,15 +11,15 @@ require_once "inc/loggedin.inc.php";
     <?php include "layout/navbar.php"; ?>
     <div class="riffcatcher-page container-fluid mx-auto">
         <div class="riffcatcher-title-text">
-            <H1><?php echo strtoupper($_SESSION['username']) ?>'s Riff Catcher</H1>
+            <H1><?php echo strtoupper($_SESSION['username']) ?>'s RiffCatcher</H1>
         </div>
 
         <div class="record-controls">
             <p><strong>To record a file, hit Record:</strong></p>
             <div id="controls">
-                <button class="btn btn-outline-success" id="recordButton"><i class="fas fa-microphone"></i>&nbsp;Record</button>&nbsp;&nbsp;
-                <button class="btn btn-outline-danger pl-4 pr-4" id="stopButton" disabled><i class="fas fa-stop-circle"></i>&nbsp;Stop</button>&nbsp;&nbsp;
-                <button class="btn btn-outline-warning pl-3 pr-3" id="pauseButton" disabled><i class="fas fa-pause"></i>&nbsp;Pause</button><br><br>
+                <button class="btn btn-outline-success riffcatcher-btn" id="recordButton"><i class="fas fa-microphone"></i>&nbsp;Record</button>&nbsp;&nbsp;
+                <button class="btn btn-outline-danger pl-4 pr-4 riffcatcher-btn" id="stopButton" disabled><i class="fas fa-stop-circle"></i>&nbsp;Stop</button>&nbsp;&nbsp;
+                <button class="btn btn-outline-warning pl-3 pr-3 riffcatcher-btn" id="pauseButton" disabled><i class="fas fa-pause"></i>&nbsp;Pause</button><br><br>
             </div>
         </div>
         <div id="formats">Format: Hit record above, sample rate will display here</div><br>

@@ -14,7 +14,7 @@ $sql = "SELECT user.username
 
     while ($row = $result->fetch_assoc()){
 
-        $username = $row['username'];
+        $username = strtoupper($row['username']);
 
         $dir = 'usr/' . $username . '/upload'; 
         echo "<div class=\"riffcatcher-title-text\"><h1>" . $username . "'s Riffs</h1><hr>";  

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pageTitle = "Riff Catcher";
+$pageTitle = "RiffCatcher";
 require_once "layout/header.php";
 ?>
 
@@ -16,7 +16,7 @@ require_once "layout/header.php";
         </div> -->
         <br><br>
         <div class="main-page-text">
-            <p>Welcome to &copy;Riffcatcher, your own library of riffs and ideas. </P>
+            <p>Welcome to &copy;RiffCatcher, your own library of riffs and ideas. </P>
             <p>Have you ever wanted one place to record and store musical riffs or ideas and share those ideas with friends around the world?</p>
             <p></p>
             <p>With Riff Catcher you can <a href="register.php">sign up</a> for a free account and begin recording ideas using the microphone on your PC. Don't wait, get started today!</p>

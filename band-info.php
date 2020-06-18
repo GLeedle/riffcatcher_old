@@ -15,7 +15,7 @@ require_once "layout/header.php";
             <hr>
             <a href="update-band.php">Edit band information and add members</a>
             <br><br>
-            <a href="delete-band.php">Delete the band <?php echo ucwords($_GET['bandname']) ?></a>
+            <a href="delete-band.php"><span class="error">Delete the band <?php echo ucwords($_GET['bandname']) ?></span></a>
         </div>
         <div class="display-band-files">
             <?php require_once "inc/band.info.inc.php";

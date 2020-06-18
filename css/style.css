@@ -7,6 +7,8 @@
     --secondaryClr: #FA6B1B;
     --secondaryLtClr: #FDF1ED;
     --tertiaryClr: #17a2b8;
+    --text: #ffffff;
+    --green: #28A745;
 }
 
 body {
@@ -52,7 +54,7 @@ ul {
     justify-content: center;
     align-items: center;
     background-color: var(--primaryClr);
-    color: #ffffff;
+    color: var(--text);
 }
 
 .nav-link-logo {
@@ -79,7 +81,7 @@ ul {
 
 .registration-container {
     background-color: var(--primaryLtClr);
-    color: #ffffff;
+    color: var(--text);
 }
 
 .registration-page {
@@ -88,7 +90,7 @@ ul {
 }
 
 .registration-form {
-    background-color: #4d5263;
+    background-color: var(--primaryLtClr);
 }
 
 .registration-page-bg {
@@ -128,7 +130,7 @@ ul {
 }
 
 .login-form {
-    color: #ffffff;
+    color: var(--text);
 }
 
 .login-footer {
@@ -163,7 +165,7 @@ ul {
 
 .main-page-text {
     background-color: var(--primaryLtClr);
-    color: #ffffff;
+    color: var(--text);
     padding: 2rem;
     margin: 0 auto;
     width: 60%;
@@ -202,7 +204,6 @@ ul {
     box-shadow: 5px 5px 15px rgba(116, 116, 116, .2);
 }
 
-
 #display-files {
     background-color: var(--primaryLtClr);
     border-radius: 5px;
@@ -225,7 +226,7 @@ ul {
 
 .display-band-files {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-row: wrap;
     gap: 10px;
     padding: 1em;
@@ -283,10 +284,8 @@ ul {
 }
 
 .dropzone-wrapper:hover, .dropzone-wrapper.dragover {
-    /* background: #363636; */
     background-color: var(--tertiaryClr);
-    /* border: solid 1px #17a2b8; */
-    color: #ffffff;
+    color: var(--text);
     transition: all .7s ease-out;
     cursor: pointer;
 }
@@ -337,21 +336,21 @@ ul {
 
 .save-btn:hover {
     background-color: var(--tertiaryClr);
-    color: #ffffff;
+    color: var(--text);
 }
 
 .upload-btn {
-    border: 1px solid #28A745;
+    border: 1px solid var(--green);
     width: 100px;
     text-align: center;
     padding: 5px;
-    color: #28A745;
+    color: var(--green);
     border-radius: 5px;
 }
 
 .upload-btn:hover {
-    background-color: #28A745;
-    color: #ffffff;
+    background-color: var(--green);
+    color: var(--text);
 }
 
 .image-description {
@@ -379,7 +378,7 @@ ul {
     margin: 50px auto 40px;
     width: 700px;
     background-color: var(--primaryLtClr);
-    color: #ffffff;
+    color: var(--text);
     box-shadow: 5px 5px 15px rgba(116, 116, 116, .2);
     border-radius: 5px;
     border: 1px solid var(--secondaryClr);
@@ -420,4 +419,8 @@ footer {
 .delete-page {
     margin-top: 200px;
     margin-bottom: 420px;
+}
+
+.riffcatcher-btn {
+    box-shadow: 5px 5px 15px rgba(116, 116, 116, .2);
 }
