@@ -1,20 +1,22 @@
 <?php
+// start session variable, set page title
 session_start();
 $pageTitle = ucwords($_SESSION['username'] . "'s Band creator");
 require_once "inc/loggedin.inc.php";
 require_once "layout/header.php";
+// call php file to update band data
 require_once "inc/update.band.inc.php";
-// var_dump($_SESSION);
 ?>
 
 <body>
+    <!-- call navigation -->
     <?php require_once "layout/navbar.php"; ?>
     <div class="container-fluid">
+        <!-- display current information from the database -->
         <div class="riffcatcher-title-text">
             <h1>Update info for <?php echo ucwords($_SESSION['bandname']) ?></h1>
             <hr>
             <form class="form-group text-left w-75 mx-auto" action="update-band.php" method="POST">
-
                 <label for="bandname">Create or change band Name</label>
                 <input class="form-control" type="text" id="bandname" name="bandname" value="<?php echo (isset($bandname_db) ? $bandname_db : ''); ?>">
                 <br>
@@ -31,8 +33,6 @@ require_once "inc/update.band.inc.php";
                     <option value="6" <?php if ($genre_db == "6") echo ' selected="selected"'; ?>>Heavy Metal</option>
                     <option value="7" <?php if ($genre_db == "7") echo ' selected="selected"'; ?>>R&B/Hip-Hop</option>
                 </select>
-
-                <!-- <input type="submit" value="Update Band"> -->
                 <br><br>
                 <label for="bandmember">Add Member to Band</label>
                 <input class="form-control" type="text" id="bandmember" name="bandmember">
@@ -41,6 +41,7 @@ require_once "inc/update.band.inc.php";
             </form>
         </div>
     </div>
+    <!-- call footer -->
     <?php include "layout/footer.php" ?>
 </body>
 

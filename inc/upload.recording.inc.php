@@ -21,10 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // basename gets just the file name
     $target_file = basename($_FILES['audio_data']['name'] . ".wav");
     
-    // var_dump($target_file);
-    // require __DIR__ . "/../db/mysqli_connect.inc.php";
-    // set upload folder name
 
+    // set upload folder name
     $upload_dir = __DIR__ . '/../usr/' . $_SESSION['username'] . '/upload';
 
 

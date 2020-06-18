@@ -1,14 +1,18 @@
 <?php
+// start session variable, set page title
 session_start();
 require_once "inc/loggedin.inc.php";
 $pageTitle = "User information for " . ucwords($_SESSION['username']);
 include_once "layout/header.php";
+// call php file that will handle the upload of image to the server and delete current photo that is set in the database
 require_once "inc/update.profile.image.inc.php";
 ?>
 
 <body>
+    <!-- call navigation -->
     <?php include_once "layout/navbar.php";  ?>
     <div class="container-fluid">
+        <!-- display the current image on file and provide upload button to change -->
             <div class="reg-wrapper p-2 border-left border-right border-light text-center">
                 <div class="profile-img-large mx-auto ">
                     <div class="riffcatcher-title-text">
@@ -28,6 +32,7 @@ require_once "inc/update.profile.image.inc.php";
                 </div>
             </div>
         </div>
+        <!-- call footer -->
         <?php include_once "layout/footer.php"; ?>
 </body>
 

@@ -135,6 +135,7 @@ function createDownloadLink(blob) {
 	currentDate += d.getSeconds() + "-";
 	currentDate += d.getMilliseconds();
 
+	// setting filename to the current date/time
 	filename = currentDate
 
 
@@ -161,7 +162,7 @@ function createDownloadLink(blob) {
 	upload.href = "#";
 	upload.innerHTML = "&nbsp;<span class=\"upload-btn\">Upload</span>";
 	upload.addEventListener("click", function (event) {
-
+		// prevent the window from loading when uploading to server
 		event.preventDefault();
 		var fd = new FormData();
 		fd.append("audio_data", blob, filename);

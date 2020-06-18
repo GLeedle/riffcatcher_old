@@ -1,8 +1,8 @@
 <?php
-
+// connect to database
 require_once "sql/db_connect.inc.php";
 
-
+// makes sure this is POST data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // set variable from the $_POST data

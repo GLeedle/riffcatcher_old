@@ -1,13 +1,13 @@
 <?php
-
+// connects to database
 require_once "sql/db_connect.inc.php";
-
+// sets user_id from session
 $user_id = $_SESSION['user_id'];
-
+// pulls all data from the user table for this user
 $sql = "SELECT * FROM user WHERE user_id = $user_id";
-
+// queries database
 $result = $db->query($sql);
-// get the one row of data
+// loops through the results and sets variables of returned value
 while ($row = $result->fetch_assoc()) {
 
     $firstname_db = $row['firstname'];
@@ -21,9 +21,10 @@ while ($row = $result->fetch_assoc()) {
     $phone_db = $row['phone'];
 }
 
+// makes sure this is POST data
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-
+// if post data is empty, uses the data that was brought back from the query, if set, assigns data to new variable
     if (empty($_POST['firstname'])) {
         $firstname = $firstname_db;
     } else {
@@ -86,10 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $_SESSION['phone'] = $_POST['phone'];
     }
 
-
-
-
-
+    // updates database with new data
     $sql = "UPDATE user SET
     firstname = '$firstname',
     lastname = '$lastname',
@@ -101,10 +99,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     zip = '$zip',
     phone = '$phone'
     WHERE user_id = $user_id";
-
-    echo $sql;
-
+    // queries database
     $db->query($sql);
-
+    // redirects page to profile page
     header('Location: user-profile.php');
 }

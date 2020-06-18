@@ -1,14 +1,14 @@
 <?php
-$pageTitle = 'Login for Riff Catcher';
+// start session to store login information, set page title
 session_start();
+$pageTitle = 'Login for Riff Catcher';
+// call the php that will log the user in and set base session variables
 require 'inc/login.inc.php';
 require_once 'layout/header.php';
 ?>
 
 <body>
-    <?php // require_once "layout/navbar.php";
-    // var_dump($_SESSION); 
-    ?>
+    <!-- display login window -->
     <div class="login-page-bg">
         <div class="login-page">
             <div class="container-fluid p-5 text-center rounded shadow w-25 login-window">
@@ -27,10 +27,11 @@ require_once 'layout/header.php';
             </div>
         </div>
     </div>
+    <!-- call footer -->
     <div class="login-footer">
-
         <?php include_once 'layout/footer.php'; ?>
     </div>
+    <!-- js script to handle login issues -->
     <script src="js/loginError.js"></script>
 
 </body>

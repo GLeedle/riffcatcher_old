@@ -1,12 +1,14 @@
 <?php
+// start session, set page title
+session_start();
 $pageTitle = "Register for Riff Catcher";
 require_once 'layout/header.php';
-session_start();
-// include "layout/navbar.php";
+// call the php file that will handle adding registration information to the db
 require "inc/register.inc.php";
 ?>
 
 <body>
+    <!-- display the form requesting user information -->
     <div class="registration-page-bg">
         <div class="registration-page">
             <div class="container-fluid w-50 text-center rounded shadow registration-container">
@@ -60,7 +62,9 @@ require "inc/register.inc.php";
                 </div>
             </div>
         </div>
+        <!-- call footer -->
         <?php include 'layout/footer.php'; ?>
     </div>
+    <!-- js script that handles errors on the page and  makes sure all fields are filled out-->
     <script src="js/errorHandle.js"></script>
 </body>

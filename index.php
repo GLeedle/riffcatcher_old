@@ -1,19 +1,16 @@
 <?php
+// call session variable, set page title
 session_start();
 $pageTitle = "RiffCatcher";
 require_once "layout/header.php";
 ?>
 
 <body>
+    <!-- set navigation -->
     <?php include "layout/navbar.php"; ?>
-    <div class="hero-img">
-        <!-- <img src="img/stage-bg.jpg" alt="On the Stage"> -->
+    <div class="hero-img">        
     </div>
     <div class="container-fluid mb-5">
-        <!-- <div class="riffcatcher-title-main">
-            <h1>Riff Catcher</h1>
-            <h6>Catching riffs, one dream at a time</h6>
-        </div> -->
         <br><br>
         <div class="main-page-text">
             <p>Welcome to &copy;RiffCatcher, your own library of riffs and ideas. </P>
@@ -34,7 +31,7 @@ require_once "layout/header.php";
         </div>
     </div>
 
-
+    <!-- call footer -->
     <?php include_once "layout/footer.php" ?>
     <!-- jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>

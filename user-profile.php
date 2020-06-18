@@ -1,17 +1,16 @@
 <?php
+// start session variable, set page title
 session_start();
 require_once "inc/loggedin.inc.php";
 $pageTitle = "User information for " . ucwords($_SESSION['username']);
 include_once "layout/header.php";
+// call php file that handles update of current records
 require_once "inc/update.records.inc.php";
 ?>
 
 <body>
-    <?php
-    include_once "layout/navbar.php";
-    // var_dump($_SESSION)
-    ?>
-
+    <!-- call navigation -->
+    <?php include_once "layout/navbar.php"; ?>
     <div class="registration-page-bg">
         <div class="registration-page">
             <div class="container-fluid w-50 mt-5 text-white shadow profile-page-wrapper registration-container">
@@ -28,6 +27,7 @@ require_once "inc/update.records.inc.php";
                         </div>
                     </div>
                     <hr class="bg-secondary">
+                    <!-- displays the current profile data from the database and allows the user to change it if necessary -->
                     <form class="form-group text-left w-75 mx-auto" action="user-profile.php" method="POST">
 
                         <label for="firstname">Change First Name</label>
@@ -62,6 +62,7 @@ require_once "inc/update.records.inc.php";
                 </div>
             </div>
         </div>
+        <!-- call footer -->
     <?php include_once "layout/footer.php"; ?>
     </div>
 </body>

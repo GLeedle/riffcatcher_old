@@ -1,9 +1,11 @@
 <?php
+// call the Session variable, set the page title, check to see if the user is logged in
 session_start();
 $pageTitle = ucwords($_SESSION['username'] . "'s Band creator");
 require_once "inc/loggedin.inc.php";
 require_once "layout/header.php";
 require_once "layout/navbar.php";
+// call the php for band creation
 require_once "inc/create.band.inc.php";
 ?>
 
@@ -12,6 +14,7 @@ require_once "inc/create.band.inc.php";
             <div class="band-creator-form">
                 <div class="riffcatcher-title-text">
                     <h1>Welcome to the Band creator</h1>
+                    <!-- form to create Band options -->
                     <form class="form-group text-left w-75 mx-auto" action="create-band.php" method="POST">
                         <label for="bandname">Create Band Name</label>
                         <input class="form-control" type="text" id="bandname" name="bandname" value="<?php echo (isset($bandname_db) ? $bandname_db : ''); ?>">
@@ -40,6 +43,7 @@ require_once "inc/create.band.inc.php";
                 </div>
             </div>
         </div>
+        <!-- set footer -->
     <?php include "layout/footer.php" ?>
 </body>
 
