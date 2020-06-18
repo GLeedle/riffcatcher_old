@@ -10,22 +10,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     FROM riff
                     WHERE user_id = $user_id";
         $db->query($sql);
-
+        sleep(1);
         $sql =  "DELETE
                     FROM band
                     WHERE user_id = $user_id";
         $db->query($sql);
-
+        sleep(1);
         $sql =  "DELETE
                     FROM band_member
                     WHERE user_id = $user_id";
         $db->query($sql);
-
+        sleep(1);
         $sql =  "DELETE
                     FROM user
                     WHERE user_id = $user_id";
         $db->query($sql);
         // destroy the session variable, logging the user out
+        sleep(1);
         session_destroy();
         // set variable to user directory
         $usrDir = "usr/" . $_SESSION['username'];

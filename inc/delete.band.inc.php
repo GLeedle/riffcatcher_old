@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             FROM band
             WHERE band_id = $band_id";
         $db->query($sql);
-
+        sleep(1);
         $sql =  "DELETE
             FROM band_member
             WHERE band_id = $band_id";
